@@ -7,22 +7,20 @@ use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+
+
     public function index()
     {
         $categorias = Categoria::all();
         return view('categorias_listar', compact('categorias'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function indexWithTrashed(){
+        $categorias = Categoria::onlyTrashed()->get();
+        return view('categoria_restaurar', compact('categorias'));
+    }
+ 
     public function create()
     {
         return view('categoria_cadastrar');

@@ -33,7 +33,7 @@
                             <a href="{{route('categorias.index')}}">Listar</a>
                         </li>
                         <li>
-                            <a href="/categorias/restaurar">Restaurar</a>
+                            <a href="/não-sei">Restaurar</a>
                         </li>
                     </ul>
                 </li>
