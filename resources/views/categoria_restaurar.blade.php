@@ -11,13 +11,14 @@
   </thead>
   <tbody>
     @foreach($categorias as $cat)
-        <tr>       
+        <tr>
             <td>{{$cat->id}}</td>
             <td>{{$cat->nome}}</td>
             <td>
-            <form>
+            <form >
                 @csrf
-                <button type = "submit" class = "btn btn-danger">Restaurar(ainda sem view e metodo...)</button>
+                <a href="{{route('categorias.restore', $cat->id)}}"class="btn btn-success"> Restaurar</a>
+                <a href="{{route('categorias.excluirdevez', $cat->id)}}"class="btn btn-success"> Excluir</a>
             </form>  
             </td>
         </tr>

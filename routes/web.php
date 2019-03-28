@@ -19,5 +19,8 @@ Route::get('/categoria/editar/{id}', "CategoriaController@edit");
 Route::get('/categoria/cadastro', "CategoriaController@create");
 Route::post('/categoria', "CategoriaController@store");*/
 
+Route::get('/categorias/restaurar/', 'CategoriaController@indexWithTrashed')->name('categorias.restaurar');
+Route::get('categorias/restaurar/{id}', 'CategoriaController@restore')->name('categorias.restore');
+Route::get('categorias/excluir/{id}', 'CategoriaController@excluirdevez')->name('categorias.excluirdevez');
 Route::resource('categorias', 'CategoriaController');
 Route::resource('produtos', 'ProdutoController');
