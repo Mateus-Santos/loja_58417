@@ -9,8 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Categoria extends Model
 {
     use SoftDeletes;
-    public function produto(){
-        return $this->hasMany('App\Produto');
+
+    public function roupa(){
+        return $this->hasMany('App\Roupa', 'id_categoria', 'id');
     }
 
 }

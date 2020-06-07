@@ -23,4 +23,4 @@ Route::get('/categorias/restaurar/', 'CategoriaController@indexWithTrashed')->na
 Route::get('categorias/restaurar/{id}', 'CategoriaController@restore')->name('categorias.restore');
 Route::get('categorias/excluir/{id}', 'CategoriaController@excluirdevez')->name('categorias.excluirdevez');
 Route::resource('categorias', 'CategoriaController');
-Route::resource('produtos', 'ProdutoController');
+Route::resource('roupas', 'RoupaController');

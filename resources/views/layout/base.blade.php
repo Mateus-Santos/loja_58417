@@ -5,8 +5,9 @@
     <link href="{{asset('css/app.css')}}" rel = "stylesheet">
     <link href="{{asset('css/style.css')}}" rel = "stylesheet">
     <link href="{{asset('css/side-bar.css')}}" rel = "stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Chivo' rel='stylesheet'>
     <meta name="csrf-token" content = "{{csrf_token()}}">
-    <title>Lojinha</title>
+    <title>Loja Demonstrativa</title>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
@@ -33,18 +34,18 @@
                             <a href="{{route('categorias.index')}}">Listar</a>
                         </li>
                         <li>
-                            <a href="{{route('categorias.restaurar')}}">Restaurar</a>
+                            <a href="{{route('categorias.restaurar')}}">Lixeira</a>
                         </li>
                     </ul>
                 </li>
-                <li @if($current == "produtos") class = "active" @endif >
-                    <a href="#produtosSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Produtos</a>
-                    <ul class="collapse list-unstyled" id="produtosSubmenu">
+                <li @if($current == "roupas") class = "active" @endif >
+                    <a href="#roupasSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Roupas</a>
+                    <ul class="collapse list-unstyled" id="roupasSubmenu">
                         <li>
-                            <a href="{{route('produtos.create')}}">Novo</a>
+                            <a href="{{route('roupas.create')}}">Novo</a>
                         </li>
                         <li>
-                            <a href="{{route('produtos.index')}}">Listar</a>
+                            <a href="{{route('roupas.index')}}">Listar</a>
                         </li>
                     </ul>
                 </li>
@@ -66,7 +67,7 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar-expand-lg navbar-light">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
