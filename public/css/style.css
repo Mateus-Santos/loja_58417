@@ -1,10 +1,5 @@
-body{
-    margin: 0px;
-    padding: 0px;
-}
-
 .title{
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 40pt;
     font-weight: bolder;
     position: absolute;
@@ -67,23 +62,79 @@ body{
     text-align: center;
 }
 
-.div_principal_roupa{
+.roupa_container{
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 10%;
+    left: 22%;
     width: 75%;
+    background-color: #1C3048;
+    border-radius: 10px;
 }
 
-.div_roupa{
+.roupa{
+    background-color: lavender;
     float: left;
-    width: 27%;
-    height: 300px;
+    height: 450px;
+    width: 30%;
     margin-left: 2%;
-    margin-right: 3%;
+    margin-right: 1%;
     margin-top: 2%;
-    background-color: rgb(0, 128, 0);
+    border-radius: 10px;
+}
+
+.image-position{
+    position: relative;
+    margin-left: auto;
+    width: 300px;
+    height: 300px;
+    top: 1%;
+}
+
+.img_roupa{
+    position: relative;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .nome_roupa{
-    font-size: 10pt;
+    font-size: 13pt;
+    color: black;
+    margin-left: 3%;
+    margin-top: 4%;
+}
+
+.preco_roupa{
+    position: relative;
+    margin-left: 5%;
+    font-size: 15pt;
+    color: black;
+}
+
+.action_roupa{
+    position: relative;
+    top: 3%;
+    margin-top: 2%;
+    margin-left: 5%;
+    width: 100%;
+}
+
+.shadow_edit{
+    box-shadow: 0px 0px 10px rgb(0, 38, 255);
+}
+
+.shadow_delete{
+    box-shadow: 0px 0px 10px rgb(253, 0, 0);
+}
+
+.shadow_show{
+    box-shadow: 0px 0px 10px rgb(51, 182, 58);
+}
+
+.show_imagem_container{
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    margin-left: auto;
+    width: 70%;
+    height: 40%;
 }

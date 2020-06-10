@@ -8,74 +8,67 @@ use Illuminate\Http\Request;
 
 class RoupaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $roupas = Roupa::all();
+        foreach($roupas as $roupa){
+            $roupa->preco_roupa = number_format($roupa->preco_roupa, 2, ',', '.');
+        }
         return view('roupa_listar', compact('roupas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $categorias = Categoria::all();
         return view('roupa_cadastrar', compact('categorias'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $roupa = new Roupa();
         $roupa->nome_roupa = $request->input("nome_roupa");
         $roupa->descricao_roupa = $request->input("descricao_roupa");
+        $request->preco_roupa = number_format($request->preco_roupa, 2, ',', '.');
         $roupa->preco_roupa = $request->input("preco_roupa");
-        $roupa->foto_roupa = $request->input("foto_roupa");
+        $path = $request->file("foto_roupa")->store('images', 'public');
+        $roupa->foto_roupa = $path;
         $roupa->id_categoria = $request->input("id_categoria");
         $roupa->nome_tecido = $request->input("nome_tecido");
         $roupa->save();
         return redirect()->route('roupas.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Roupa  $Roupa
-     * @return \Illuminate\Http\Response
-     */
     public function show(Roupa $roupa)
     {
-        //
+        return view('roupa_show', compact('roupa'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Roupa  $Roupa
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Roupa $roupa)
     {
-        //
+        $categorias = Categoria::all();
+        return view('roupa_editar', compact('categorias', 'roupa'));
     }
 
     public function update(Request $request, Roupa $roupa)
     {
-        //
+        $roupa->nome_roupa = $request->input("nome_roupa");
+        $roupa->descricao_roupa = $request->input("descricao_roupa");
+        $request->preco_roupa = number_format($request->preco_roupa, 2, ',', '.');
+        $roupa->preco_roupa = $request->input("preco_roupa");
+        $roupa->id_categoria = $request->input("id_categoria");
+        $roupa->nome_tecido = $request->input("nome_tecido");
+        $roupa->save();
+        return redirect()->route('roupas.index');
     }
 
+
+    /*public function trocarimagemview(Request $request, Roupa $roupa){
+        return view('roupa_editarimg', compact('roupa'));
+    }
+    public function trocarimagem(Roupa $roupa){
+        $path = $request->file("foto_roupa")->store('images', 'public');
+        $roupa->foto_roupa = $path;
+    }*/
     public function destroy(Roupa $roupa)
     {
         //
