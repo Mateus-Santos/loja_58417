@@ -3,7 +3,7 @@
 @section('body')
 <div class="div_listar">
 <h2 class="title_form">Lista de Categoria</h2>
-<table class="table table-striped">
+<table class="table table-striped table-dark">
   <thead>
     <tr>
       <th scope="col">ID</th>

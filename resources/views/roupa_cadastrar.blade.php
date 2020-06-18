@@ -2,7 +2,7 @@
 
 @section('body')
 <div class="div_form">
-    <form action = "{{route('roupas.store')}}" method = "POST" enctype="multipart/form-data">
+    <form name="formcadastro" action = "{{route('roupas.store')}}" method = "POST" enctype="multipart/form-data" onSubmit ="return validacao();">
         @csrf
         <div class = "form-group">
             <div class = "form-group">

@@ -1,11 +1,7 @@
-/*
-    DEMO STYLE
-*/
-
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(197, 199, 211);
+    background-color: rgb(240, 240, 240);
 
 }
 
@@ -15,6 +11,31 @@ p {
     font-weight: 300;
     line-height: 1.7em;
     color: #999;
+}
+
+.icons{
+    position: relative;
+    margin-right: 3%;
+}
+
+.copyright_position{
+    position: absolute;
+    top: 95%;
+    font-size: 10pt;
+    margin-left: 5%;
+    color: white;
+}
+
+.icone_instagram_position{
+    position: absolute;
+    top: 89%;
+    margin-left: 3%;
+    color: white;
+}
+
+.icone_instagram{
+    width: 30px;
+    height: 30px;
 }
 
 
@@ -110,18 +131,6 @@ li.active>a{
     background: #fff;
 }
 
-a[data-toggle="collapse"] {
-    position: relative;
-}
-
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
@@ -160,20 +169,4 @@ a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
-}
-
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
-
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-    #sidebarCollapse span {
-        display: none;
-    }
 }

@@ -1,9 +1,9 @@
 .title{
-    color: rgb(0, 0, 0);
+    color: #1C3048;
     font-size: 40pt;
     font-weight: bolder;
     position: absolute;
-    left: 39%;
+    left: 30%;
     top: 14%;
     border-radius: 5px;
     padding-left: 1%;
@@ -13,26 +13,26 @@
 .div_inicial{
     position: absolute;
     left: 27%;
-    top: 24%;
+    top: 34%;
     width: 60%;
     padding-left: 1%;
     padding-right: 1%;
     padding-top: 1%;
     border-radius: 10px;
-    background-image: linear-gradient(rgba(190, 189, 189, 0.87), rgba(105, 105, 105, 0.897));
+    background-image: linear-gradient(#03397a, #002b5f);
 }
 
 .text_inicial{
-    color: rgb(17, 18, 20);
+    color: rgb(255, 255, 255);
     font-size: 15pt;
     font-weight: 500;
 }
 
 .div_listar{
-    background-color: rgb(255, 255, 255);
+    background-color: #343A40;
     position: absolute;
     left: 35%;
-    top: 29%;
+    top: 20%;
     min-width: 37%;
 }
 
@@ -130,11 +130,67 @@
     box-shadow: 0px 0px 10px rgb(51, 182, 58);
 }
 
-.show_imagem_container{
+.show_roupa_container{
+    background-image: linear-gradient(#1C3048, rgb(9, 117, 250));
+    border-radius: 10px;
     position: absolute;
-    left: 30%;
-    top: 20%;
-    margin-left: auto;
+    left: 25%;
+    top: 13%;
     width: 70%;
-    height: 40%;
+    height: 70%;
+}
+
+.show_image{
+    position: absolute;
+    top: 12%;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.div_show_image{
+    position: absolute;
+    left: 69%;
+    top: 7%;
+}
+
+.show_title_roupa{
+    color: rgb(253, 253, 253);
+    font-size: 25pt;
+    margin-left: 12%;
+    margin-top: 1%;
+}
+
+.div_conteudo_roupa_show{
+    word-wrap: break-word;
+    background-image: linear-gradient(rgba(190, 189, 189, 0.87), rgba(105, 105, 105, 0.897));
+    margin-left: 2%;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.conteudo_roupa_show{
+    color: black;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.preco_roupa_show{
+    position: relative;
+    color: rgb(0, 0, 0);
+    left: 20%;
+    top: 13%;
+    width: 75%;
+    height: 70%;
+}
+
+.image_edit{
+    margin-left: 2%;
+    width: 150px;
+    height: 150px;
+}
+
+#image_preview{
+    margin-left: 2%;
+    width: 150px;
+    height: 150px;
 }
