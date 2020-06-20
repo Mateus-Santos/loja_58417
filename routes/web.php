@@ -14,10 +14,13 @@
 Route::get('/', function () {
     return view('inicial');
 });
-/*Route::get('/categorias', "CategoriaController@index");
-Route::get('/categoria/editar/{id}', "CategoriaController@edit");
-Route::get('/categoria/cadastro', "CategoriaController@create");
-Route::post('/categoria', "CategoriaController@store");*/
+
+/*
+Route::get('/admin', 'AuthController@dashboard')->name('admin');
+Route::get('/admin/login', 'AuthController@showLoginForm')->name('admin.login');
+Route::get('/admin/logout', 'AuthController@logout')->name('admin.logout');
+Route::post('/admin/login/do', 'AuthController@login')->name('admin.login.do');
+*/
 
 Route::get('/categorias/restaurar/', 'CategoriaController@indexWithTrashed')->name('categorias.restaurar');
 Route::get('categorias/restaurar/{id}', 'CategoriaController@restore')->name('categorias.restore');
@@ -25,3 +28,7 @@ Route::get('categorias/excluir/{id}', 'CategoriaController@excluirdevez')->name(
 Route::resource('categorias', 'CategoriaController');
 Route::resource('roupas', 'RoupaController');
 Route::get('/roupas/{roupa}/editar', 'RoupaController@editar')->name('roupas.editar');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
