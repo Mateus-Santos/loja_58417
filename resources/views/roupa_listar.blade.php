@@ -14,6 +14,7 @@
             R$: {{$roupa->preco_roupa}}
           </div>
           <div class="action_roupa">
+          @if(Auth::check()===true)
           <form action = "{{route('roupas.destroy', $roupa)}}" method = "POST">
                 @csrf
                 <a class = "btn btn-primary shadow_edit" href="{{route('roupas.editar', $roupa)}}">
@@ -39,11 +40,35 @@
                     </svg>
                 </a>
           </form>
+          @else
+          <form action = "{{route('roupas.destroy', $roupa)}}" method = "POST">
+                @csrf
+                <a class = "btn btn-success shadow_show" href="{{route('roupas.show', $roupa)}}">
+                    Detalhe
+                    <svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
+                      <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                    </svg>
+                </a>
+                <a class = "btn btn-success shadow_show" href="#">
+                    Comprar
+                    <svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
+                      <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                    </svg>
+                </a>
+          </form>
+          @endif
           </div>
         </div>
     @endforeach
+    @if(Auth::check()===true)
     <div class="roupa">
-      
+      <a href="{{route('roupas.create')}}" class="btn btn-success new_roupa">Nova Roupa</a>
     </div>
+    <div class="div_creditos">
+    © Mateus Santos
+    </div>
+    @endif
 </div>
 @endsection

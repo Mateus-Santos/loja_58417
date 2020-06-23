@@ -23,7 +23,17 @@
             <div class="sidebar-header">
                 <h3>Loja Demonstrativa</h3>
             </div>
+            @if(auth::check()===true)
+            <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                Sair
+            </a>
 
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            @endif
             <ul class="list-unstyled components">
                 <li @if($current == "principal") class = "active" @endif>
                     <a href="/">
@@ -108,9 +118,8 @@
                     </ul>
                 </li>
             </ul>
-            <p class="copyright_position">&copy; Mateus Santos</p>
-            <p class="icone_instagram_position"> <img class="icone_instagram" src="../storage/images_sistem/instagram_icon.png"><a href=""> @teeu_santos_</a></p>
             
+            <p class="icone_instagram_position"> <img class="icone_instagram" src="../storage/images_sistem/instagram_icon.png"><a href=""> @teeu_santos_</a></p>
         </nav>
 
         <!-- Page Content  -->
@@ -135,9 +144,7 @@
     @endif
     <script src="{{asset('js/app.js')}}" type = "text/javascript"></script>
     <script src="{{asset('js/side-bar.js')}}" type = "text/javascript"></script>
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 
 </body>

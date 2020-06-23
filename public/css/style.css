@@ -67,12 +67,11 @@
     top: 10%;
     left: 22%;
     width: 75%;
-    background-color: #1C3048;
     border-radius: 10px;
 }
 
 .roupa{
-    background-color: lavender;
+    background-color: #1C3048;
     float: left;
     height: 450px;
     width: 30%;
@@ -80,6 +79,32 @@
     margin-right: 1%;
     margin-top: 2%;
     border-radius: 10px;
+}
+
+.roupa:hover{
+    background-color: #013c85;
+}
+
+.div_creditos{
+    color: rgb(255, 255, 255);
+    top: 95%;
+    width: 100%;
+    margin-top: 41%;
+    margin-left: 1%;
+}
+
+.new_roupa{
+    position: relative;
+    top: 47%;
+    left: 32%;
+}
+
+.dropdown-item{
+    color: white;
+}
+
+.title_aviso{
+    font-size: 50pt;
 }
 
 .image-position{
@@ -189,8 +214,227 @@
     height: 150px;
 }
 
-#image_preview{
-    margin-left: 2%;
-    width: 150px;
-    height: 150px;
+
+@media screen and (max-width: 250px){
+    .title{
+        color: green;
+        font-size: 35pt;
+        font-weight: bolder;
+        position: absolute;
+        left: 30%;
+        top: 14%;
+        border-radius: 5px;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    
+    .div_inicial{
+        position: absolute;
+        left: 30%;
+        top: 34%;
+        width: 60%;
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-top: 1%;
+        border-radius: 10px;
+        background-image: linear-gradient(#03397a, #002b5f);
+    }
+    
+    .text_inicial{
+        color: rgb(255, 255, 255);
+        font-size: 15pt;
+        font-weight: 500;
+    }
+    
+    .div_listar{
+        background-color: #343A40;
+        position: absolute;
+        left: 35%;
+        top: 20%;
+        min-width: 37%;
+    }
+    
+    .div_form{
+        position: absolute;
+        left: 36%;
+        top: 20%;
+        width: 42%;
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-top: 1%;
+        border-radius: 10px;
+        background-image: linear-gradient(rgb(190, 189, 189), rgba(105, 105, 105, 0.897));
+        box-shadow: white;
+    }
+    
+    .sub_title_form{
+        font-size: 17px;
+        font-weight: bolder;
+    }
+    
+    .title_form{
+        font-family: 'Chivo';
+        color: black;
+        font-weight: bolder;
+        font-size: 35px;
+        text-align: center;
+    }
+    
+    .roupa_container{
+        position: absolute;
+        top: 10%;
+        left: 22%;
+        width: 75%;
+        border-radius: 10px;
+    }
+    
+    .roupa{
+        background-color: #1C3048;
+        float: left;
+        height: 450px;
+        width: 30%;
+        margin-left: 2%;
+        margin-right: 1%;
+        margin-top: 2%;
+        border-radius: 10px;
+    }
+    
+    .roupa:hover{
+        background-color: #013c85;
+    }
+    
+    .div_creditos{
+        color: rgb(255, 255, 255);
+        top: 95%;
+        width: 100%;
+        margin-top: 41%;
+        margin-left: 1%;
+    }
+    
+    .new_roupa{
+        position: relative;
+        top: 47%;
+        left: 32%;
+    }
+    
+    .dropdown-item{
+        color: white;
+    }
+    
+    .title_aviso{
+        font-size: 50pt;
+    }
+    
+    .image-position{
+        position: relative;
+        margin-left: auto;
+        width: 300px;
+        height: 300px;
+        top: 1%;
+    }
+    
+    .img_roupa{
+        position: relative;
+        max-width: 300px;
+        max-height: 300px;
+    }
+    
+    .nome_roupa{
+        font-size: 13pt;
+        color: black;
+        margin-left: 3%;
+        margin-top: 4%;
+    }
+    
+    .preco_roupa{
+        position: relative;
+        margin-left: 5%;
+        font-size: 15pt;
+        color: black;
+    }
+    
+    .action_roupa{
+        position: relative;
+        top: 3%;
+        margin-top: 2%;
+        margin-left: 5%;
+        width: 100%;
+    }
+    
+    .shadow_edit{
+        box-shadow: 0px 0px 10px rgb(0, 38, 255);
+    }
+    
+    .shadow_delete{
+        box-shadow: 0px 0px 10px rgb(253, 0, 0);
+    }
+    
+    .shadow_show{
+        box-shadow: 0px 0px 10px rgb(51, 182, 58);
+    }
+    
+    .show_roupa_container{
+        background-image: linear-gradient(#1C3048, rgb(9, 117, 250));
+        border-radius: 10px;
+        position: absolute;
+        left: 25%;
+        top: 13%;
+        width: 70%;
+        height: 70%;
+    }
+    
+    .show_image{
+        position: absolute;
+        top: 12%;
+        max-width: 400px;
+        max-height: 400px;
+    }
+    
+    .div_show_image{
+        position: absolute;
+        left: 69%;
+        top: 7%;
+    }
+    
+    .show_title_roupa{
+        color: rgb(253, 253, 253);
+        font-size: 25pt;
+        margin-left: 12%;
+        margin-top: 1%;
+    }
+    
+    .div_conteudo_roupa_show{
+        word-wrap: break-word;
+        background-image: linear-gradient(rgba(190, 189, 189, 0.87), rgba(105, 105, 105, 0.897));
+        margin-left: 2%;
+        width: 40%;
+        border-radius: 10px;
+    }
+    
+    .conteudo_roupa_show{
+        color: black;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    
+    .preco_roupa_show{
+        position: relative;
+        color: rgb(0, 0, 0);
+        left: 20%;
+        top: 13%;
+        width: 75%;
+        height: 70%;
+    }
+    
+    .image_edit{
+        margin-left: 2%;
+        width: 150px;
+        height: 150px;
+    }
+    
+    #image_preview{
+        margin-left: 2%;
+        width: 150px;
+        height: 150px;
+    }
 }

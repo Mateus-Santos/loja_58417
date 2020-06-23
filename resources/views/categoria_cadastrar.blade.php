@@ -10,7 +10,6 @@
                 <label class="sub_title_form" for="nome">Nome da categoria:</label>
                 <input type="text" class="form-control" id="nome" name="nome_categoria">
             </div>
-
             <button class = "submit_button btn btn-success" type = "submit">Cadastrar!</button>
         </div>
     </form>

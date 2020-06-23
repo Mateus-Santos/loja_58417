@@ -8,5 +8,10 @@
         excluir entre outras funções as roupas e categorias do banco de dados, mas é necessario entrar em contato com ele em seu Instagram
         para realizar o login com a conta admin do site. <a href="#"> @teeu_santos_</a>
         </p>
+        @if(Auth::check() === false)
+        <a href="{{route('login')}}" class="btn btn-warning">Login</a>
+        <br>
+        <br>
+        @endif
     </div>
 @endsection

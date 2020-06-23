@@ -30,5 +30,4 @@ Route::resource('roupas', 'RoupaController');
 Route::get('/roupas/{roupa}/editar', 'RoupaController@editar')->name('roupas.editar');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
