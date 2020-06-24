@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="{{asset('css/style.css')}}" rel = "stylesheet">
-    <link href="{{asset('css/side-bar.css')}}" rel = "stylesheet">
+    <link href="{{asset('css/mobile.css')}}" rel = "stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Chivo' rel='stylesheet'>
     <meta name="csrf-token" content = "{{csrf_token()}}">
     <title>Loja Demonstrativa</title>
@@ -23,10 +24,19 @@
             <div class="sidebar-header">
                 <h3>Loja Demonstrativa</h3>
             </div>
-            @if(auth::check()===true)
-            <a class="dropdown-item" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
+            @if(Auth::check() === false)
+            <a href="{{route('login')}}" class="btn btn-warning">
+            <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+                Fazer Login
+            </a>
+            @else
+            <a class="btn btn-danger"href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <svg class="bi bi-chevron-double-left" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
                 Sair
             </a>
 
@@ -118,8 +128,7 @@
                     </ul>
                 </li>
             </ul>
-            
-            <p class="icone_instagram_position"> <img class="icone_instagram" src="../storage/images_sistem/instagram_icon.png"><a href=""> @teeu_santos_</a></p>
+            <a href=""><img href="#" title="@teu_sanntos" class="icone_instagram" src="../storage/images_sistem/instagram_icon.png"></a>
         </nav>
 
         <!-- Page Content  -->
@@ -131,11 +140,7 @@
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
                     </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
                 </div>
-                <i class="fab fa-instagram"></i>
             </nav>  
         </div>
     </div>
