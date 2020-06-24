@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Roupa;
 use App\Categoria;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class RoupaController extends Controller
@@ -26,7 +27,7 @@ class RoupaController extends Controller
             $categorias = Categoria::all();
             return view('roupa_cadastrar', compact('categorias'));
         }
-        return view('inicial');
+        return view('aviso_login');
     }
 
     public function store(Request $request)
@@ -44,7 +45,7 @@ class RoupaController extends Controller
             $roupa->save();
             return redirect()->route('roupas.index');
         }
-        return view ('inicial');
+        return view ('aviso_login');
     }
 
     public function show(Roupa $roupa)
@@ -66,11 +67,9 @@ class RoupaController extends Controller
             $path = $request->file("foto_roupa")->store('images', 'public');
             $roupa->foto_roupa = $path;
             $roupa->save();
-            return view('roupa_editar', compact('categorias', 'roupa'));
         }
         $roupa->nome_roupa = $request->input("nome_roupa");
         $roupa->descricao_roupa = $request->input("descricao_roupa");
-        $request->preco_roupa = number_format($request->preco_roupa, 2, ',', '.');
         $roupa->preco_roupa = $request->input("preco_roupa");
         $roupa->id_categoria = $request->input("id_categoria");
         $roupa->nome_tecido = $request->input("nome_tecido");
@@ -81,6 +80,10 @@ class RoupaController extends Controller
 
     public function destroy(Roupa $roupa)
     {
-        //
+        if(auth::check() === true){
+            $roupa->delete();
+            return redirect()->route('roupas.index');
+        }
+        return view('aviso_login');
     }
 }

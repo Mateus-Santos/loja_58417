@@ -1,4 +1,4 @@
-@media screen and (max-width: 500px){
+@media screen and (max-width: 1101px){
     .title{
         z-index: -1;
         color: #1C3048;
@@ -52,12 +52,19 @@
         text-align: center;
     }
     
+    .roupa_container{
+        position: absolute;
+        top: 10%;
+        left: 6%;
+        width: 95%;
+        border-radius: 10px;
+    }
     
     .roupa{
         background-color: #1C3048;
         float: left;
         height: 450px;
-        width: 85%;
+        width: 100%;
         margin-top: 2%;
         border-radius: 10px;
     }
@@ -66,18 +73,10 @@
         background-color: #013c85;
     }
     
-    .div_creditos{
-        color: rgb(255, 255, 255);
-        top: 95%;
-        width: 100%;
-        margin-top: 41%;
-        margin-left: 1%;
-    }
-    
     .new_roupa{
         position: relative;
-        top: 47%;
-        left: 32%;
+        top: 55%;
+        left: 40%;
     }
     
     .dropdown-item{
@@ -95,11 +94,13 @@
     
     .image-position{
         position: relative;
-        left: -20%;
-        top: 1%;
+        margin-left: 30%;
+        width: 300px;
+        height: 300px;
     }
     
     .img_roupa{
+        position: relative;
         max-width: 300px;
         max-height: 300px;
     }
@@ -107,7 +108,7 @@
     .nome_roupa{
         font-size: 13pt;
         color: rgb(255, 255, 255);
-        margin-left: 3%;
+        margin-left: 5%;
         margin-top: 4%;
     }
     
@@ -120,8 +121,8 @@
     
     .action_roupa{
         position: relative;
-        left: -20%;
-        margin-top: 10%;
+        margin-left: 25%;
+        top: -3%;
     }
     
     .shadow_edit{

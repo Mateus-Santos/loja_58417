@@ -26,6 +26,14 @@ function validacao(){
         erro = true;
     }
 
+    var preco_roupaP = preco_roupa.indexOf(",");
+
+    if(preco_roupaP >= 0){
+        alert("Por favor, use ponto em vez de vírgula.");
+        document.formcadastro.preco_roupa.focus();
+        erro = true;
+    }
+
     if(nome_tecido==""){
         alert("Por favor, preencha o campo Tecido.");
         document.formcadastro.nome_roupa.focus();

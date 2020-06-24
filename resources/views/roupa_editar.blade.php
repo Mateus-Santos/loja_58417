@@ -2,7 +2,7 @@
 
 @section('body')
 <div class="div_form">
-    <form name="formcadastro" action = "{{route('roupas.update', $roupa)}}" method = "POST" enctype="multipart/form-data">
+    <form name="formcadastro" action = "{{route('roupas.update', $roupa)}}" method = "POST" enctype="multipart/form-data" onSubmit ="return validacao();">
         @csrf
         @method('PUT')
         <div class = "form-group">
@@ -34,7 +34,6 @@
                 <br/>
                 <label class="sub_title_form" for="foto_roupa">Imagem atual</label>
                 <input class = "form-control-file" type ="file" id="foto_roupa" name="foto_roupa">
-                <img id="image_preview" src="../storage/{{$roupa->foto_roupa}}">
             </div>
                 <button class = "submit_button btn btn-success" type = "submit">Cadastrar!</button>
         </div>
